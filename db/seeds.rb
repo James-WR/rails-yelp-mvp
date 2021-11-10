@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do
-  restaurant = Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.full_address)
+  restaurant = Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.full_address, category: ["chinese", "italian", "japanese", "french", "belgian"].sample)
   puts "Created a restaurant named #{restaurant.name}"
 end
