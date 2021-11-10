@@ -5,6 +5,9 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
+    # @reviews = @restaurant.reviews
+    # ^ don't need because we have a getter in show.html
   end
 
   def new

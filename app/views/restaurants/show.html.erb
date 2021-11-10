@@ -8,4 +8,22 @@
   <%= @restaurant.address %>
 </p>
 
+
+<%= form_for [@restaurant, @review] do |f| %>
+  <%= f.label :review %>
+  <%= f.text_field :content%>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+  <%= f.submit %>
+<% end %>
+
+<% @restaurant.reviews.each do |review| %>
+<%# making a getter ^ %>
+  <ul>
+  <li><%=review.content%></li>
+  <li><%=review.rating%></li>
+  </ul>
+<% end %>
+
+
 <%=link_to "Go back", restaurants_path %>
